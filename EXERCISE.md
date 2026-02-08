@@ -31,25 +31,45 @@ Build a **Discount Engine** that calculates final cart price + applied discount 
   "customerId": "vip123",
   "items": [
     {
-      "id": "book1",
-      "name": "TypeScript Guide",
-      "unitPrice": 120,
-      "quantity": 3,
-      "category": "BOOK"
-    },
-    {
-      "id": "laptop",
-      "name": "MacBook",
-      "unitPrice": 4000,
-      "quantity": 2,
-      "category": "ELECTRONICS"
-    },
-    {
-      "id": "snack",
-      "name": "Protein Bar",
-      "unitPrice": 50,
-      "quantity": 3,
-      "category": "FOOD"
+      "originalTotal": 8510,
+      "finalTotal": 6723.5,
+      "appliedRules": [
+        {
+          "ruleId": "A",
+          "description": "10% cart discount (>300)",
+          "amount": -851
+        },
+        {
+          "ruleId": "B",
+          "description": "BOOK bundle discount (3+ books)",
+          "amount": -15
+        },
+        {
+          "ruleId": "C",
+          "description": "50% off cheapest item (>5 items total)",
+          "amount": -25
+        },
+        {
+          "ruleId": "D",
+          "description": "5% discount on ELECTRONICS total (≥2 ELECTRONICS items)",
+          "amount": -400
+        },
+        {
+          "ruleId": "E",
+          "description": "FOOD category discount (>100)",
+          "amount": -20
+        },
+        {
+          "ruleId": "F",
+          "description": "Free shipping (>1000)",
+          "amount": -50
+        },
+        {
+          "ruleId": "G",
+          "description": "VIP customer discount (5%)",
+          "amount": -425.5
+        }
+      ]
     }
   ]
 }
